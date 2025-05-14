@@ -1,3 +1,4 @@
+{% load 'static' %}
 { % extends 'base.html' %}
 
 {% block conteudo %}
@@ -9,24 +10,26 @@
             <!-- Article da notícia -->
             <article class="card-noticia">
                 <div class="card-imagem">
-                    <img src="{{ noticia. }}" alt="Imagem da notícia 1">
+                    <img src="{{ ultimas_noticias.imagem_url }}" alt="Imagem da notícia 1">
                 </div>
                 <!-- Conteúdo do card -->
                 <div class="card-conteudo">
-                    <span class="categoria politica"> {{ noticia.categoria }} </span>
-                    <h3> {{ noticia.titulo }}</h3>
-                    <p class="resumo"> {{ noticia.resumo }} </p>
+                    <span class="categoria politica"> {{ ultimas_noticias.categoria }} </span>
+                    <h3> {{ ultimas_noticias.titulo }}</h3>
+                    <p class="resumo"> {{ ultimas_noticias.subtitulo }} </p>
                     <!-- Função expandir card -->
                     <div class="card-expandir">
                         <p class="conteudo-completo">
-                            {{ noticia.descricao }}
+                            {{ ultimas_noticias.conteudo }}
                         </p>
                         <button class="btn-leia-mais">Leia mais</button>
                     </div>
                     <!-- Rodapé -->
                     <div class="card-rodape">
-                        <span class="data-publicacao">{{ noticia.data_da_publicacao }}</span>
-                        <span class="tempo-leitura"><i class="fa-regular fa-clock"></i> {{ noticia.tempo_de_leitura }}
+                        <span class="data-publicacao">{{ ultimas_noticias.data_publicacao }}</span>
+                        <span class="tempo-leitura"><i class="fa-regular fa-clock"></i> {{ ultimas_noticias.local }}
+                        </span>
+                        <span class="tempo-leitura"><i class="fa-regular fa-clock"></i> {{ ultimas_noticias.fonte }}
                         </span>
                     </div>
                 </div>
