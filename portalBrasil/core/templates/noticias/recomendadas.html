@@ -1,0 +1,38 @@
+{ % extends 'base.html' %}
+
+{% block conteudo %}
+<div class="painel-aba" id="recomendadas">
+    <!-- Aba Recomendadas -->
+    <div class="painel-aba ativo" id="ultimas">
+        <div class="grid-noticias">
+            {% for noticia in noticias %}
+            <!-- Article da notícia -->
+            <article class="card-noticia">
+                <div class="card-imagem">
+                    <img src="{{ recomendada. }}" alt=" imagem 1">
+                </div>
+                <!-- Conteúdo do card -->
+                <div class="card-conteudo">
+                    <span class="categoria tecnologia">{{ recomendada.categoria }}</span>
+                    <h3> {{ recomendada.titulo }}</h3>
+                    <p class="resumo"> {{ recomendada.resumo }} </p>
+                    <!-- Função expandir card -->
+                    <div class="card-expandir">
+                        <p class="conteudo-completo">
+                            {{ recomendada.descricao }}
+                        </p>
+                        <button class="btn-leia-mais">Leia mais</button>
+                    </div>
+                    <!-- Rodapé -->
+                    <div class="card-rodape">
+                        <span class="data-publicacao">{{ recomendada.data_da_publicacao }}</span>
+                        <span class="tempo-leitura"><i class="fa-regular fa-clock"></i>{{ recomendada.tempo_de_leitura
+                            }}</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
